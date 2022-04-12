@@ -27,6 +27,10 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.shear</groupId>
+            <artifactId>lib-api</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

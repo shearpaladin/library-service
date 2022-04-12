@@ -1,47 +1,85 @@
 openapi: 3.0.0
-
 info:
   version: 0.0.1
   title: Library Service
-  description: The library service
-
+  description: |
+    The library service
 servers:
-  - url: https://localhost:8080
-
+  - url: https://localhost:8080/
+    description: This is where my api is
 tags:
-  - name: "Library"
-
-
+  - name: Books
+  - name: Users
 paths:
 
-  /library/books:
+  /books/{bookId}:
+    parameters:
+      - name: bookId
+        description: book id
+        schema:
+          type: string
+        in: path
+        required: true
+
     get:
-      summary: This is summary
+      summary: Get a book by ID
+      operationId: getBookById
+      responses:
+        '200':
+          description: This means its okay
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+
+
+  /books:
+
+    post:
+      summary: Create a book
+      operationId: createBook
+      requestBody:
+        description: HELLO
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+      responses:
+        "201":
+          description: CREATED
+
+
+    get:
+      summary: This gets all the books
+      description: Books endpoint
       tags:
-        - "Library"
-      description: This is a description
+        - Books
       operationId: getAllBooksInLibrary
       responses:
-        "200":
-          description: This means its ok
+        '200':
+          description: This means its okay
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/Book'
-
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
 components:
-
   schemas:
-
     Book:
       description: This is the book model
       type: object
+      required:
+        - name
       properties:
         name:
           description: The name of book
           type: string
-        bookAuthor:
-          description: name of author
+        author:
+          description: The author
           type: string
