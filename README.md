@@ -25,10 +25,35 @@ I used open API to generate my CRUD operations
 
 ## Installation
 
+Docker Desktop
+
+
 # How to run locally
 
 In the terminal run (this should generate a target folder):
-mvn clean install 
+mvn clean install
+
+Open  Docker Desktop
+
+docker run -d -p 80:80 docker/getting-started
+docker build -t library-test .
+docker run -p 8080:8080 library-test
+
+Check localhost url
+# Shutting down 
+
+docker ps -a
+docker rm {container_id}
+
+docker images
+docker rmi libary-test
+
+
+
+
+
+
+
 
 ## References
 
