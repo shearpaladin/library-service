@@ -1,1 +1,4 @@
-/mvnw.cmd
+/.DS_Store
+/.idea
+/library-service.iml
+*/target
