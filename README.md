@@ -1,20 +1,14 @@
 # library-service
 spring-boot project using open-api, docker, maven, REST
 
-I will clean up this later...
 
-I used docker to run the project, as well as open-api to generate all the CRUD operations. 
+I used docker to run the project, as well as open-api to generate basic GET and POST CRUD operations
 
 ## Frameworks Used
 
 - Frameworks: Maven, Spring
-- Frontend- Spring-Thymeleaf templates
-- Backend - Java, Spring
-- Database - Postgres
+- Backend - Java
 
-## Photos
-
-where's the photos at?
 
 ## API Documentation
 
@@ -47,10 +41,6 @@ docker rm {container_id}
 
 docker images
 docker rmi libary-test
-
-
-
-
 
 
 
